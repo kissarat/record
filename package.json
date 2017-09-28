@@ -1,0 +1,24 @@
+{
+  "name": "record",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kissarat/record.git"
+  },
+  "keywords": [
+    "audio",
+    "video",
+    "recorder"
+  ],
+  "author": "Taras Labiak <kissarat@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kissarat/record/issues"
+  },
+  "homepage": "https://github.com/kissarat/record#readme"
+}

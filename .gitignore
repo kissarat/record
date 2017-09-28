@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+config.json
+node_modules/
+package-lock.json
+public/files/
+public/.well-known/

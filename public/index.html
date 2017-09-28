@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recoding</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            margin: auto;
+        }
+
+        #token, #duration {
+            display: block;
+            margin: 6px;
+        }
+
+        #duration input {
+            width: 40px;
+            text-align: right;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 400px;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@2.4.4/dist/vue.min.js"></script>
+</head>
+<body>
+<form>
+    <label>
+        <input v-model="audio" type="checkbox"/>
+        audio
+    </label>
+    <label v-on:click="reset()">
+        <input v-model="video" type="checkbox"/>
+        video
+    </label>
+    <label id="token">
+        Token:
+        <input v-model="token"/>
+    </label>
+    <label id="duration">
+        Fragment duration:
+        <input v-model="duration" type="number"/>
+        minutes
+    </label>
+    <label>
+        Format:
+        <select v-model="format">
+            <option v-for="mime in mimes" v-bind:value="mime">{{ mime }}</option>
+        </select>
+    </label>
+    <button v-bind:disabled="!format" type="button" v-on:click="record()">Record</button>
+    <button v-bind:disabled="!recording || saving" type="button" v-on:click="save()">Save</button>
+    <div v-if="files.length > 0">
+        <h1>Saved</h1>
+        <ul>
+            <ol v-for="file in files">
+                <a v-bind:href="'/files/' + token + '/' + file">{{ file }}</a>
+            </ol>
+        </ul>
+    </div>
+</form>
+<script src="record.js"></script>
+</body>
+</html>
