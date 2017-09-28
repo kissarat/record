@@ -1,6 +1,7 @@
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
+const config = require('../config')
 
 const UPLOADDIR = path.normalize(__dirname + '/../public/files')
 
@@ -62,4 +63,4 @@ const server = http.createServer(function (req, res) {
   }
 })
 
-server.listen(8012)
+server.listen(config.port || 8020)
